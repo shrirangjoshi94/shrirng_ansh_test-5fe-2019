@@ -1,12 +1,17 @@
 <?php
 
 try{
-    $sum = 0;
+    
     $count = count($argv);
     if($count > 1)
     {
-    if($argv[1] == "sum" || $argv[1] == "add")
+    if($argv[1] == "sum" || $argv[1] == "add" || $argv[1] == "multiply")
     {
+        $output = 0;
+        if($argv[1] == "multiply")
+    {
+$output =1;
+    }
     if($count > 2)
     {
         $input = $argv[2];
@@ -56,10 +61,16 @@ $i++;
     {
         if($temp[$i] <= 1000)   //task 7 added filter only to add numbers below 1000
         {
-            $sum = $sum + $temp[$i];
+            if($argv[1] == "sum" || $argv[1] == "add")
+            {
+                $output = $output + $temp[$i];
+            }else if($argv[1] == "multiply")
+            {
+$output = $output*$temp[$i];
+            }
         }
     }
-    echo $sum;
+    echo $output;
     exit;
     }
     }else{
