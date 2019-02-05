@@ -40,12 +40,12 @@ if($temp[$i] < 0)
         exit;
     }else{
 
-if($argv[1] == "add") //task 3
+if($argv[1] == "add" || $argv[1] == "multiply") //task 3
 {
     $temp = "";
-    for($i=0; $i < strlen($input); $i++) 
+    for($i=0; $i < strlen($input); $i++)  
     {
-        if($input[$i] != "n")
+        if($input[$i] != "n" && $input[$i] != '\\') //task 4
         {
 $temp .= $input[$i];
         }else{
@@ -62,10 +62,10 @@ $temp .= $input[$i];
         {
             if($argv[1] == "sum" || $argv[1] == "add")
             {
-                $output = $output + $temp[$i];
+                $output = $output + ((isset($temp[$i]) && !empty($temp[$i])) ? $temp[$i] : 0);
             }else if($argv[1] == "multiply")
             {
-$output = $output*$temp[$i];
+$output = $output*((isset($temp[$i]) && !empty($temp[$i])) ? $temp[$i] : 1);
             }
         }
     }
