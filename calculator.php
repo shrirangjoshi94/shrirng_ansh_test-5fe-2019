@@ -8,7 +8,7 @@ try{
     if($argv[1] == "sum" || $argv[1] == "add" || $argv[1] == "multiply")
     {
         $output = 0;
-        if($argv[1] == "multiply")
+        if($argv[1] == "multiply") //for task 8
     {
 $output =1;
     }
@@ -40,22 +40,21 @@ if($temp[$i] < 0)
         exit;
     }else{
 
-//print_r($input);exit;
-
-/*
 if($argv[1] == "add") //task 3
 {
-    for($i = 0;$i < $count;$i++)
+    $temp = "";
+    for($i=0; $i < strlen($input); $i++) 
     {
-        if(!is_numeric($input[$i])){
- $temp = explode("n",$arg[2][$i]);
- $input[$i] = $temp[0];
- $input[$i] = $temp[1];
-$i++;
+        if($input[$i] != "n")
+        {
+$temp .= $input[$i];
+        }else{
+            $temp .=',';
         }
     }
+    $input = $temp;
 }
-*/
+
     $temp = explode(",",$input);
     for($i = 0;$i < count($temp);$i++)
     {
