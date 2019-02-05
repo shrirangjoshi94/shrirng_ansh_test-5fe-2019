@@ -8,7 +8,7 @@ $sum = 0;
 $count = count($argv);
 if($count > 1)
 {
-if($argv[1] == "sum")
+if($argv[1] == "sum" || $argv[1] == "add")
 {
 if($count > 2)
 {
