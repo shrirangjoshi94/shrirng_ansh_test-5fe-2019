@@ -1,9 +1,5 @@
 <?php
 
-//echo nl2br("\n");
-//print_r($input);
-//exit;
-
 try{
     $sum = 0;
     $count = count($argv);
@@ -15,16 +11,22 @@ try{
     {
         $input = $argv[2];
         $temp = explode(",",$input);
+        $negativeNumbers = [];
         for($i = 0; $i < count($temp);$i++) //task 5
         {
 if(is_numeric($temp[$i]))
 {
 if($temp[$i] < 0)
 {
-    echo "Negative numbers not allowed";
-    exit;
+    array_push($negativeNumbers,$temp[$i]);
 }
 }
+        }
+        if(count($negativeNumbers) > 0)
+        {
+            $negativeNumbers = implode(",",$negativeNumbers); 
+            echo "Negative numbers (".$negativeNumbers.")not allowed";
+            exit; 
         }
 
     if(isset($input) && is_numeric($input))
