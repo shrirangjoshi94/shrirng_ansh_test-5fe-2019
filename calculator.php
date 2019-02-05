@@ -27,10 +27,10 @@ echo $sum;
     echo 0;
 }
 }else{
-    echo "in else";
+    echo "math operation name does not match";
 }
 }else{
-    echo "Please enter the a math operation naeme";
+    echo "Please enter the a math operation name";
     //return;
 }
 echo nl2br("\n");
