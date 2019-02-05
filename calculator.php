@@ -12,7 +12,7 @@ try{
         $input = $argv[2];
         $temp = explode(",",$input);
         $negativeNumbers = [];
-        for($i = 0; $i < count($temp);$i++) //task 5
+        for($i = 0; $i < count($temp);$i++) //task 5 added filer to throw error if -ve numbers are present
         {
 if(is_numeric($temp[$i]))
 {
@@ -25,7 +25,7 @@ if($temp[$i] < 0)
         if(count($negativeNumbers) > 0)
         {
             $negativeNumbers = implode(",",$negativeNumbers); 
-            echo "Negative numbers (".$negativeNumbers.")not allowed";
+            echo "Negative numbers (".$negativeNumbers.")not allowed"; //task 6
             exit; 
         }
 
@@ -54,7 +54,10 @@ $i++;
     $temp = explode(",",$input);
     for($i = 0;$i < count($temp);$i++)
     {
-    $sum = $sum + $temp[$i];
+        if($temp[$i] <= 1000)   //task 7 added filter only to add numbers below 1000
+        {
+            $sum = $sum + $temp[$i];
+        }
     }
     echo $sum;
     exit;
